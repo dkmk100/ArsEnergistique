@@ -5,6 +5,7 @@ import java.util.Collections;
 import java.util.List;
 import java.util.function.Function;
 
+import gripe._90.arseng.cursedrelay.CursedRelayNodePart;
 import net.minecraft.Util;
 import net.minecraft.core.Registry;
 import net.minecraft.world.item.Item;
@@ -73,6 +74,16 @@ public final class ArsEngItems {
                 "ME Source Acceptor",
                 "cable_source_acceptor",
                 p -> new PartItem<>(p, SourceAcceptorPart.class, SourceAcceptorPart::new));
+    });
+
+
+    //only on this one cursed branch
+    public static final ItemDefinition<PartItem<CursedRelayNodePart>> CURSED_RELAY_NODE_PART = Util.make(() -> {
+        PartModels.registerModels(PartModelsHelper.createModels(CursedRelayNodePart.class));
+        return item(
+                "Relay Node",
+                "two_way_relay_node",
+                p -> new PartItem<>(p, CursedRelayNodePart.class, CursedRelayNodePart::new));
     });
 
     public static List<ItemDefinition<SourceCellItem>> getCells() {

@@ -191,10 +191,4 @@ spotless {
 
         bumpThisNumberIfACustomStepChanges(1)
     }
-
-    json {
-        target("src/*/resources/**/*.json")
-        targetExclude("src/generated/resources/**")
-        prettier().config(mapOf("parser" to "json"))
-    }
 }

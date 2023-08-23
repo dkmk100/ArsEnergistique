@@ -8,6 +8,8 @@ import java.util.Map;
 import java.util.function.Function;
 import java.util.function.Supplier;
 
+import gripe._90.arseng.cursedrelay.CursedRelayBlock;
+import gripe._90.arseng.cursedrelay.CursedRelayTile;
 import net.minecraft.core.Registry;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.Item;
@@ -50,6 +52,12 @@ public final class ArsEngBlocks {
 
     public static final BlockDefinition<SourceAcceptorBlock> SOURCE_ACCEPTOR =
             block("ME Source Acceptor", "source_acceptor", SourceAcceptorBlock::new);
+
+    public static final BlockDefinition<CursedRelayBlock> CURSED_RELAY =
+            block("Two way relay", "two_way_relay_block", CursedRelayBlock::new);
+
+    public static final BlockEntityType<CursedRelayTile> CURSED_RELAY_TILE = blockEntity(
+            "two_way_relay_block", CursedRelayTile.class, CursedRelayTile::new, CURSED_RELAY);
 
     public static final BlockEntityType<SourceAcceptorBlockEntity> SOURCE_ACCEPTOR_ENTITY = blockEntity(
             "source_acceptor", SourceAcceptorBlockEntity.class, SourceAcceptorBlockEntity::new, SOURCE_ACCEPTOR);
